@@ -41,5 +41,4 @@ public class ParseJSON
 			e.printStackTrace();
 		}
 	}
-
 }
