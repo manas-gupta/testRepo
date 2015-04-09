@@ -16,12 +16,17 @@ public class ParseJSON
 	{
 		try
 		{
+			//Get a JSONParser
 			JSONParser parser = new JSONParser();
+			//Get a JSONObject
 			JSONObject ob = (JSONObject)parser.parse(new FileReader(new File("ques.json")));
+			//Get the JSONArray from "questions" object
 			JSONArray ar = (JSONArray)ob.get("questions");
 			for(int i=0;i<ar.size();i++)
 			{
-				System.out.println(ar.get(i));
+				JSONObject ques = (JSONObject)ar.get(i); // Access a JSONArray using get(int index)
+				System.out.println(ques.get("Q"));
+				System.out.println(ques.get("A")); 
 			}
 		}
 		catch(FileNotFoundException e)
